@@ -6,6 +6,7 @@ import { ItemsModule } from './items/items.module';
 import { Item } from './items/entities/item.entity';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
+import { AuthModule } from './auth/auth.module';
 
 require('dotenv').config();
 @Module({
@@ -21,7 +22,8 @@ require('dotenv').config();
       synchronize: true,
     }),
     ItemsModule,
-    UserModule
+    UserModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
