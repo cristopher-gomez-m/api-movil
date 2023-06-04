@@ -7,6 +7,7 @@ import { Item } from './items/entities/item.entity';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
+import { UserRepository } from './user/user.repository';
 
 require('dotenv').config();
 @Module({
