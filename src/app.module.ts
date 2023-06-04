@@ -2,6 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ItemsModule } from './items/items.module';
+import { Item } from './items/entities/item.entity';
+import { UserModule } from './user/user.module';
+import { User } from './user/entities/user.entity';
+
 require('dotenv').config();
 @Module({
   imports: [
@@ -12,9 +17,11 @@ require('dotenv').config();
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: 'movil',
-      entities: [],
+      entities: [Item,User],
       synchronize: true,
-    })
+    }),
+    ItemsModule,
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
